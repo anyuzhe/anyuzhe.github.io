@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="temp,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="下面，有请@小玻玻@普元云计算 为大家直播课程，14:30郝总准时开讲，本节课后安排郝总答疑，祝大家交流愉快。 大家下午好，我是小玻玻，我现在在上海，现在上海天气达到了30度，希望我们今天的微课保持同样的热度。 课程简介：从 2016 年以来，Gartner 提出了一个新的移动前端技术的分类——Javascript Frameworks for Native Mobile，无论是 React Na">
+<meta name="keywords" content="temp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于 React Native 的移动平台研发实践-转">
+<meta property="og:url" content="https://anyuzhe.github.io/2017/05/11/基于-React-Native-的移动平台研发实践/index.html">
+<meta property="og:site_name" content="暗语者的博客">
+<meta property="og:description" content="下面，有请@小玻玻@普元云计算 为大家直播课程，14:30郝总准时开讲，本节课后安排郝总答疑，祝大家交流愉快。 大家下午好，我是小玻玻，我现在在上海，现在上海天气达到了30度，希望我们今天的微课保持同样的热度。 课程简介：从 2016 年以来，Gartner 提出了一个新的移动前端技术的分类——Javascript Frameworks for Native Mobile，无论是 React Na">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://cdn1.anyuzhe.com/image/6PjVCk7OUgPCbyXZK3RnAs42rYr7q8RdIlcmly7A.png">
+<meta property="og:image" content="http://cdn1.anyuzhe.com/image/WhC7YahIXh1cMIJYewCyusidoD2P3GNHTfoN6m5u.png">
+<meta property="og:image" content="http://cdn1.anyuzhe.com/image/du7pL7hEgO4kfzTkrn7yZVMqsFyAHjedCNk54r1K.png">
+<meta property="og:image" content="http://cdn1.anyuzhe.com/image/DtHFljRAzesPcv8v06XFrgGJdMRxm50PuwO2B7W4.png">
+<meta property="og:image" content="http://cdn1.anyuzhe.com/image/bCpuHgK65XR1Xx7Y3iM0MRF80JJuwNxtenvffDkn.png">
+<meta property="og:image" content="http://cdn1.anyuzhe.com/image/nf1fTjJHDt9sR6hZfRdtcdNjZWOaM6OOmTVL6K7q.png">
+<meta property="og:image" content="http://cdn1.anyuzhe.com/image/D2rGbbDvNwLzJxNMy5Nysz392Su55NXLI1PPowtz.png">
+<meta property="og:image" content="http://cdn1.anyuzhe.com/image/eKlakEvB0bXfAdGLenPNW1ZuqYcjsXhYdtzmSCia.png">
+<meta property="og:image" content="http://cdn1.anyuzhe.com/image/ktng9fdpYjbETUzH79UTvFmCYWvaAiUnqLyYFVxd.png">
+<meta property="og:image" content="http://cdn1.anyuzhe.com/image/4puLjMNm2akE8LXIssrPu2skTU0DgWPWpXbsI28T.png">
+<meta property="og:image" content="http://cdn1.anyuzhe.com/image/J3eFJ43Wj8mOluZHkJIphoGZGi1b9IrqkeJQlC8n.png">
+<meta property="og:image" content="http://cdn1.anyuzhe.com/image/nuU7E1pWvkPXPp8TRfsPhCebBu6lwMnu5x4Mpe0h.png">
+<meta property="og:image" content="http://cdn1.anyuzhe.com/image/w4VESUCYpXhuig1W9DWx9zBpnNIKDm56b0dZSpl1.png">
+<meta property="og:image" content="http://cdn1.anyuzhe.com/image/yF0i4u3f3RW6wb2wLwVo3jtEIelH95nmVf1losjL.png">
+<meta property="og:image" content="http://cdn1.anyuzhe.com/image/ld9u2XIqERp8vQzUaBaTItghdbxM0P6aWO7Nbg0h.png">
+<meta property="og:updated_time" content="2021-11-19T03:41:15.357Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于 React Native 的移动平台研发实践-转">
+<meta name="twitter:description" content="下面，有请@小玻玻@普元云计算 为大家直播课程，14:30郝总准时开讲，本节课后安排郝总答疑，祝大家交流愉快。 大家下午好，我是小玻玻，我现在在上海，现在上海天气达到了30度，希望我们今天的微课保持同样的热度。 课程简介：从 2016 年以来，Gartner 提出了一个新的移动前端技术的分类——Javascript Frameworks for Native Mobile，无论是 React Na">
+<meta name="twitter:image" content="http://cdn1.anyuzhe.com/image/6PjVCk7OUgPCbyXZK3RnAs42rYr7q8RdIlcmly7A.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://anyuzhe.github.io/2017/05/11/基于-React-Native-的移动平台研发实践/">
+
+
+
+
+
+  <title>基于 React Native 的移动平台研发实践-转 | 暗语者的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    
+    <a href="https://github.com/anyuzhe" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">暗语者的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://anyuzhe.github.io/2017/05/11/基于-React-Native-的移动平台研发实践/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="暗语者">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="暗语者的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">基于 React Native 的移动平台研发实践-转</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-11T17:41:38+08:00">
+                2017-05-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/日志/" itemprop="url" rel="index">
+                    <span itemprop="name">日志</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/11/基于-React-Native-的移动平台研发实践/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/05/11/基于-React-Native-的移动平台研发实践/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>下面，有请@小玻玻@普元云计算 为大家直播课程，14:30郝总准时开讲，本节课后安排郝总答疑，祝大家交流愉快。</p>
+<p>大家下午好，我是小玻玻，我现在在上海，现在上海天气达到了30度，希望我们今天的微课保持同样的热度。</p>
+<p>课程简介：<br>从 2016 年以来，Gartner 提出了一个新的移动前端技术的分类——Javascript Frameworks for Native Mobile，无论是 React Native、还是 WeeX、以及普元移动平台都属于这类技术。本次分享是普元移动产品部在基于 React Native 进行移动平台研发过程的实践，希望能够抛砖引玉。分享将会围绕以下几个方面进行阐述：</p>
+<p>课程大纲：<br>1、React Native 成为趋势<br>2、React Native 实践的一些问题<br>（1）React Native 的学习成本与可替代性<br>（2）单 Bundle 与多 Bundle 的思考<br>（3）如何能够更高效的调试（首屏 VS 当前屏）<br>（4） 热更新与按需更新<br>3、基于 RN，我们的实践分享<br>（1）Bundle 的拆解的思考<br>（2）基于 RN 的扩展（Require、编译等）<br>（3）当前屏调试<br>（4）按需更新的实现</p>
+<p>嘉宾介绍：郝振明<br>十多年 IT 从业经验，一直专注于企业信息化的工作，近五年间一直从事企业移动信息化、移动互联网化的咨询、产品工作，曾主持参与了 Primeton Mobile 产品研发、联通集团、广东农信、诺亚财富、中信重工、索菲亚等公司的移动信息化工作。近两年来，致力于基于 React Native 工程化能力的提升、降低实施难度，以及智能化移动平台的产品研发，在移动开发智能化的路上不断进行探索。</p>
+<p>5月11日郝振明《基于 React Native 的移动平台研发实践》签到链接请移步→<a href="http://t.cn/RaJYok9，大家可前往注册EAII会员享受课前PPT发送，不定期抽奖等一系列权益" target="_blank" rel="noopener">http://t.cn/RaJYok9，大家可前往注册EAII会员享受课前PPT发送，不定期抽奖等一系列权益</a></p>
+<p>大家好，我是普元移动平台总负责人郝振明，很荣幸今天有机会以微课堂的方式与大家在微信群里见面，分享一下我们基于React Native的移动平台研发的一些实践。期望抛砖引玉，也欢迎大家多多指教。</p>
+<p>今天的分享我会主要围绕着三个方向展开：</p>
+<p>1、  React Native 已经成为了移动前端技术的趋势。<br>2、  基于React Native 进行移动平台研发过程中的一些思考。<br>3、  基于React Native 进行移动平台研发过程中的一些实践。</p>
+<p>1、React Native已经成为了移动前端技术的趋势</p>
+<p>从2014年年底，Facebook计划开源React Native 的时候，我就已经开始关注TA了，关注的主要原因是，我们在2012年的时候，将我们的移动平台前端开发技术确定为“DSL-&gt;Javascript-&gt;Native Mobile”这个技术流派。要知道在那个时代，绝大多数的友商要么选择Hybrid，要么选择HTML5作为移动平台的跨平台前端解决方案。</p>
+<p>然而，这两种方案最终的UI渲染，本质上都需要依赖Webkit，通俗点说就是UI最终是通过浏览器内核渲染。我们当时在技术选型的时候实在无法容忍Webkit在Andriod上的体验，而选择了驱动原生（注：这个名字是我起的，也是为了区别于传统的Hybrid技术）的方式。</p>
+<p>当时的这个技术抉择，在当时是冒着巨大的风险的，现在看来，我们是非常幸运的。</p>
+<p>后来Facebook 推出React Native 后，阿里系也推出了自己的Weex，甚至Gartner针对这类技术在2016年的报告（IT Market Clock for Mobile App Development, 2016 ）中首次出现并并为这个技术流派起了一个名字——Javascript Frameworks for Native Mobile。<br><img src="http://cdn1.anyuzhe.com/image/6PjVCk7OUgPCbyXZK3RnAs42rYr7q8RdIlcmly7A.png" alt="file"></p>
+<p>Garnter将这个技术流派当如了“Advantag”中，可见Gartner对这个技术流派的认可。</p>
+<p>Javascript Frameworks for Native Mobile这类技术的几个特点：</p>
+<p>1、  开发期基本采用类Web语言，比如React的语法<br>2、  运行期并不是采用Webkit做渲染，而是采用Native的渲染方式。<br>3、  与Native 进行交互的通道是采用Javascript的方式。</p>
+<p>当然，因其技术的先进性让各大互联网公司纷纷进行实践上的尝试，取得了不错的效果，包括天猫、腾讯QQ、手机百度、美团点评、携程等等。React Native 也建立了很好的生态，大家对案例如果有兴趣可以关注一下<a href="https://facebook.github.io/react-native/showcase.html" target="_blank" rel="noopener">https://facebook.github.io/react-native/showcase.html</a> 。</p>
+<p>考虑到群里的很多朋友对React Native 有了很深刻的理解，我这里将跳过React Native原理上的阐述，如果大家有兴趣可以分享之后加我微信一起讨论。</p>
+<p>下面，我来讲 第二部分：基于React Native 进行移动平台研发过程中的一些思考</p>
+<p>尽管React Native 在移动前端存在着无可比拟的优势，但每一家在工程化的过程中还是存在各自不同的思考。而作为移动平台，不是简单的解决单一的一个App的问题。</p>
+<p>移动平台是支撑企业全面移动信息化的平台，需要解决企业面向不同场景下的各种诉求。针对移动App的使用者的场景不同，存在面向人和面向组织两种不尽相对的要求：</p>
+<p><img src="http://cdn1.anyuzhe.com/image/WhC7YahIXh1cMIJYewCyusidoD2P3GNHTfoN6m5u.png" alt="file"></p>
+<p>面向人：每个人对应的App功能是基本相同的。人与人是平等的，就如今天在线的各位和我一样，在支付宝里看到的功能是相同的。这种情况多出现在面向最终消费者的时候。</p>
+<p>面向组织：是指功能因其所属的组织和职级决定了其所见和所能用的功能。当事人所处的组织机构发生了变化，功能也随之产生变化。</p>
+<p>针对面向组织，需要举个例子来说明一下：假如我本人之前是一名普通的manager，其实对于产品线的经营报告并无权阅读（图一）；当我被Promote 为产品线总经理的时候，我的App里就应该有“智能报表”的微应用（图二）；当我调岗到别的团队（比如从事行政工作），我就不应该再具有“智能报表”的相关功能（图三），如下图所示：</p>
+<p><img src="http://cdn1.anyuzhe.com/image/du7pL7hEgO4kfzTkrn7yZVMqsFyAHjedCNk54r1K.png" alt="file"></p>
+<p>随着岗位和职级的变化，功能从图一到图二再到图三，我还是我，而我App内的功能却发生了变化，这在企业中是非常常见的诉求。</p>
+<p>实现上述的功能，从技术方案角度看，有多种方式，但是怎么更合理呢？我们可以思考一下。</p>
+<p>首先，“智能报表”功能是否可以将UI已经打入App中，通过权限控制对应的前端“智能报表”是否显示？回答是不可以。主要原因有三：</p>
+<p>第一、类似这种功能在企业中非常多，如果要将UI全都打入到App中，这需要所有功能的全集，没有三四百M下不来。而用户实际上只有权限使用几分之一甚至是十分之一的功能，却要每次为此多更新两三百M，这是不合理的。</p>
+<p>第二、如果智能报表这个功能在用户安装ipa或者apk的时候，尚未开发完成，而是后续才迭代上线的，那么这个用户就无法及时使用到这个功能。</p>
+<p>第三、如果失去了相关的功能权限，需要的是相关的功能清除，甚至包括其相关的数据，而不是简单的隐藏，这既不安全又不合理。</p>
+<p>这就意味着，移动平台必须能够动态的方式更新应用内功能，而且必须能够结合权限提供按需的热更新能力。</p>
+<p>其次，在企业中不得不面对的是多供应商的问题，智能报表功能跟其他功能（比如：审批）是一个开发团队开发的吗？</p>
+<p>显然，在企业中完全有可能是不同的供应商进行的开发。不同供应商之间，不可能做到代码级的共享的，拿到所有移动项目的代码再进行打包，这是一件非常难以推动的事情。</p>
+<p>移动平台必须保证对于多团队、跨地域的方式也能支持并行研发。这就意味着必须提供开发期的隔离。</p>
+<p>移动平台需要支撑上述的业务场景，显然直接使用React Native 是难以满足要求的，这就引发了我们对于React Native实践的一些思考。</p>
+<p>思考一：React Native 的学习成本和可替换性</p>
+<p>作为移动平台，不得不考虑的是学习成本，在企业的供应商中是否能够对React Native的技术储备达到相关的要求，如何能够屏蔽对于技术实现的细节。</p>
+<p>众所周知，React Native 发布版本非常的频繁，一个周之前已经发到0.44，对于大规模使用时如何屏蔽版本的频繁升级导致的业务代码的重构，方便进行版本的可替换性。</p>
+<p>如果能够将React Native实现换成其他实现（比如Weex），而上层业务代码能否不需要调整，真正做到实现的可替换性。</p>
+<p>基于这一点的思考，移动平台采用了基于传统Web语法的DSL，作为开发期语言，降低了RN的学习成本；同时DSL层可以隔离业务代码与平台实现相关性，为后续RN版本更新等提供了良好的隔离，大致的示意图如下：</p>
+<p><img src="http://cdn1.anyuzhe.com/image/DtHFljRAzesPcv8v06XFrgGJdMRxm50PuwO2B7W4.png" alt="file"></p>
+<p>这里需要说明的一点是，我们并没有真正考虑基于Weex作为移动平台的一种实现，而是从技术架构上成为一种可能性。</p>
+<p>思考二：React Native 的单bundle VS 多bundle</p>
+<p>在谈论React Native的单Bundle与多Bundle的问题之前，首先，我们先回头看一下React Native 默认的Bundle 机制。</p>
+<p>在基于RN编写App时，无论开发期创建多少个文件，RN都会将这些文件一并打到一个bundle里去，简单说默认的RN就是一种单bundle的方式，其打包bundle的大概过程如下：</p>
+<p><img src="http://cdn1.anyuzhe.com/image/bCpuHgK65XR1Xx7Y3iM0MRF80JJuwNxtenvffDkn.png" alt="file"></p>
+<p>因React Native 默认采用的是单Bundle的模式，所以，其更新机制也就仅仅能够以替换这个Bundle的方式进行，虽然有一些通过diff的方式提供增量更新的方式，但这种方案仍然无法满足上面例子中的“智能报表”的按需获取的能力。</p>
+<p>另外，在进行编译打包的时候，需要获取所有项目的源代码，这对于多供应商的情况下也不适用。</p>
+<p>所以需要解决的两个问题是：</p>
+<p>1、在打包Bundle时，必须提供以多Bundle的方式进行。<br>2、在开发期，必须解决多微应用每个能够独立以Project的方式存在。</p>
+<p>思考三：React Native 的调试的首屏进入VS 当前屏刷新</p>
+<p>对于开发工程师，很重要的工作就是调试，以RN默认的单Bundle模式，势必会带来另外一个挑战，就是当资源发生任何变化时，必须重复上述的打包Bundle的过程并进行加载，看到的UI界面永远是第一屏。</p>
+<p>实际上，我们期望的绝大多数场景是看到当前修改的资源所在的屏的UI效果。从这个维度看，我们必须能够将Bundle控制在一个资源的粒度，并确保当前bundle的动态热更。</p>
+<p>另外，虽然React Native 默认不承诺跨平台，但跨平台（即一套代码同时支持iOS、Andriod）是移动平台的必备特性了。如何能够支持多屏同时调试，也将是一个必须考虑的问题。</p>
+<p>思考四：React Native 的热更新VS 按需更新</p>
+<p>说到热更新，这里不得不提的是几个月前，一堆的App被苹果拒掉的事情，这个事情曾一度让React Native 等Javascript Frameworks for Native Mobile 技术流派背黑锅。</p>
+<p>其实这件本质上还是因为某些热更方案调用了私有的API而引起的，后来导致的局面时一堆三方的SDK都受到牵连，最终导致了使用这些SDK的App被拒。插一句，我个人觉着第三方的SDK在没有让使用它们的App知晓的情况下就进行热更新，就是耍流氓，谁又能保证更新后的SDK不做点什么呢。</p>
+<p>回到热更本身，我认为，基于React Native 进行热更应该是一个必须的特性，而实际上我们需要提高要求，提供按需更新的能力。</p>
+<p>最后一个部分：基于React Native 进行移动平台研发过程中的一些实践</p>
+<p>基于上面的一些思考，我们基于React Native进行了一些实践，这里挑出几点给各位做个简单分享。</p>
+<p>实践一：引入DSL层</p>
+<p>首先，我们引入了DSL层，这里的语法采用了传统Web工程师熟知的HTML、CSS、Javascript，而使用移动平台的工程师无须对React进行过多的深入。在HTML的标签定义中，从语义上尽量能够对开发人员亲切，从习惯上尽量保留原有开发人员的一些习惯，比如对state的封装以getter、setter的方式提供能力，而这些标签需要一一以React Component的方式进行了实现。我们以Label为例（后续出现的代码均为示例代码片段）：</p>
+<p>DSL语言会在开发期编译成JSX，然后再编译成可被React Native 运行的javascript（涉及到拆分Bundle和编译，这里暂不展开）。</p>
+<p><img src="http://cdn1.anyuzhe.com/image/nf1fTjJHDt9sR6hZfRdtcdNjZWOaM6OOmTVL6K7q.png" alt="file"></p>
+<p>DSL编译成JSX，主要的工作原理大致如下：</p>
+<p>1、  HTML 标签的处理，主要是与RN的render进行关联<br>2、  CSS 的处理，主要是与RN的StyleSheet进行映射<br>3、  Javascript的处理，主要是嵌入到JSX中。</p>
+<p><img src="http://cdn1.anyuzhe.com/image/D2rGbbDvNwLzJxNMy5Nysz392Su55NXLI1PPowtz.png" alt="file"></p>
+<p>上面的代码示例左侧为基于DSL语言编写的代码，右侧是生成JSX后的代码。</p>
+<p>实际上，在工程化过程中，并不是像上面的示例代码那么容易做好，无论标签的定义，还是从DSL转换成JSX都是一个巨大的工程，且会遇到很多的问题。</p>
+<p>实践二：拆分Bundle</p>
+<p>在拆分Bundle上，我们遵守两个原则：</p>
+<p>1、将系统库作为一个bundle文件，独立存在。<br>2、将每个的Module作为一个独立bundle文件。</p>
+<p>这种拆分原则将bundle拆分成小粒度的针对Module级别的bundle，这带来的好处是，可以方便的跟DSL中HTML文件进行一一映射，其加载单元的粒度可以理解为Page级别，而非整个App。</p>
+<p>我们以require 为例，下图为默认的加载方式，如果没有对应的Module Factory，就会以异常结束，如下图：</p>
+<p><img src="http://cdn1.anyuzhe.com/image/eKlakEvB0bXfAdGLenPNW1ZuqYcjsXhYdtzmSCia.png" alt="file"></p>
+<p>扩展后，当判断没有对应的Module Factory的情况下，并不是以异常退出，而是增加了加载对应的Module级别的bundle，如下图所示；</p>
+<p><img src="http://cdn1.anyuzhe.com/image/ktng9fdpYjbETUzH79UTvFmCYWvaAiUnqLyYFVxd.png" alt="file"></p>
+<p>当然，这就必须需要移动平台自行实现RTC_PM_JSCExcutor用于加载Module级别的Bundle。这一部分代码需要采用原生的Object-C或者Andriod Java实现，下面以iOS的示例代码</p>
+<p><img src="http://cdn1.anyuzhe.com/image/4puLjMNm2akE8LXIssrPu2skTU0DgWPWpXbsI28T.png" alt="file"></p>
+<p>实践三：引入微应用</p>
+<p>在将每个Module打成一个Bundle后，会让项目内资源的关系不易管理，这时我们引入了微应用的概念，用于完善应用内逻辑关系。</p>
+<p><img src="http://cdn1.anyuzhe.com/image/J3eFJ43Wj8mOluZHkJIphoGZGi1b9IrqkeJQlC8n.png" alt="file"></p>
+<p>1、将原有的一个App对应一个Bundle的模式，改成一个App对应多个MicroApp，一个MicroApp对应多个Bundle模式。</p>
+<p>2、将原有的一个Bundle对应多个Module的模式，裁剪成一个Bundle对应一个Module的模式</p>
+<p>实践四：多屏调试</p>
+<p>多屏调试与当前屏刷新，在移动平台IDE端的产品的定义中还是占有很重要的地位，因其直接影响了开发期的效率。</p>
+<p>针对React Native 默认的编译核心框架，我们简单的可以总结为四件事情：</p>
+<p>1、  node-haste：主要是监听Module变化 ，把变化的Module从Module缓存中移除。<br>2、  ModuleCache：Module编译缓存，把编译好的Module缓存起来，Module没有发生变化的情况下，直接使用缓存组装成bundle<br>3、  Resolver：实现全局系统级库，语法级兼容实现，包括:ES5,ES6实现 兼容实现的引入 。实现Module factory的包装<br>4、  JSTransformer：调用Babel编译JSX文件到JS。</p>
+<p>其中1和2有很大原因是因为单bundle导致，当每个HTML文件对应一个Module，每个Module 对应一个bundle后，移动平台需要的就是监听HTML等文件的资源变化即可。如下图：</p>
+<p><img src="http://cdn1.anyuzhe.com/image/nuU7E1pWvkPXPp8TRfsPhCebBu6lwMnu5x4Mpe0h.png" alt="file"></p>
+<p>而这里的编译引擎基本上做的事情是：<br>1、  DSL-&gt;JSX<br>2、  JSX-&gt;js</p>
+<p>其中后者主要的工作如下所示：</p>
+<p><img src="http://cdn1.anyuzhe.com/image/w4VESUCYpXhuig1W9DWx9zBpnNIKDm56b0dZSpl1.png" alt="file"></p>
+<p>而为了能够更好的调试，需要对相关两种更新机制：</p>
+<p>1、  批量更新<br>a)           包括初次批量更新部署，下载所有文件<br>b)           使用过程中检查文件更新部署，判断需要更新的文件列表</p>
+<p>2、  单页更新<br>单页更新是确保其可以当前页保存，当前页刷新调试的主要机制</p>
+<p><img src="http://cdn1.anyuzhe.com/image/yF0i4u3f3RW6wb2wLwVo3jtEIelH95nmVf1losjL.png" alt="file"></p>
+<p>通过上述的方式，结合移动平台的IDE，可以提供</p>
+<p>1、同时支持多手机终端的多屏调试（可以同时iOS和Andriod）<br>2、提供了当前屏动态刷新动态调试</p>
+<p>实践五：按需热更</p>
+<p>当上述的实践完成后，按需更新就成了一个相对较容易做到的事情。所以移动平台提供了两级打包编译机制，在无需调整代码的情况下，可以选择以微应用的方式出现其他的App内，还是以独立的ipa／apk的方式存在以移动设备中。其基本原理如下图所示：</p>
+<p><img src="http://cdn1.anyuzhe.com/image/ld9u2XIqERp8vQzUaBaTItghdbxM0P6aWO7Nbg0h.png" alt="file"></p>
+<p>小结：</p>
+<p>基于React Native进行移动平台研发是一个系统性的工程，上述的工作仅仅是其中的一小部分，期间的坑还有很多，今天的分享也仅是从大粒度的方面进行了分享，欢迎加我微信或者关注我们的公众号（EAWorld），一起探讨。</p>
+<p>实字群提问：rn现在版本号还很低。而且根据某个版本做出来的东西升级rn版本后总是出错。对于这种情况，您能不能给些建议？</p>
+<p>讲师回答：这个确实是一个必须要考虑的事情。在我们的考虑中，是使用DSL隔离业务代码和RN框架的强依赖关系，简单点说，业务的移动端代码，是基于DSL层编程。这一点在实践一里面提了一下。</p>
+<p>实字群提问：请问能不能详细说说dsl的实践情况？有没有什么参考资料？对于小团队加上dsl层是不是非常困难？</p>
+<p>讲师回答：DSL的实践，对于小团队确实有一定的门槛，DSL可以参考移动平台的API手册。其实最近的微信小程序，也可以理解为一种DSL语言，你也可以参考。另外，RN的升级确是比较棘手，建议不要每个小的版本都进行升级。</p>
+<p>提问：两级编译最终生成跨平台包的过程中，需要对中间结果手工调整吗？</p>
+<p>提问：rn不像android或iOS平台有自己完整的系统，他很多功能的实现都依赖于第三方库或工具。这就造成了选择第三方工具时非常困难。有时候我好不容易决定用某个库，但是发现这个库的一些依赖不支持我现用的rn版本。对于选择第三方工具和库您能不能给些意见？</p>
+<p>讲师回答：对于第三方的依赖，我们是将RN的体系拨开了看，比如在实践四中提到的RN编译的四件事情，第一个node-haste，我们就没有依赖，而是通过IDE<br>的资源监听来替换，所以就无须依赖相关的三方工具了</p>
+<p>鹤字群提问：微应用可以做到按权限显示吗？ </p>
+<p>讲师回答：对的，是按照权限显示的，由于时间原因，今天的第五点没有展开。在我们的产品中，更新服务器是结合权限认证的。App的更新策略是与更新服务器进行确认的</p>
+<p>享字群提问：怎么可以多屏调试</p>
+<p>讲师回答：多屏调试这个章节中提到了IDE，在开始调试的之前，IDE和手机端（可以理解为一个调试的APP）已经预先建立的通讯，这个通讯是支持1（IDE）对多（手机终端）。当IDE发现有资源变更的情况下，产生changlist，IDE的网络服务会跟调试客户端产品通讯。调试客户端按需更新（参加分享中提到的两种更新机制）js文件，每一个js都是独立的Bundle，每一个调试客户端会单独重新load这个文件。这需要IDE和多调试客户端配合起来工作的</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/temp/" rel="tag"># temp</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/08/php_source_code/" rel="next" title="php源码阅读 文章梳理">
+                <i class="fa fa-chevron-left"></i> php源码阅读 文章梳理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/17/pyqt教程文章纪录/" rel="prev" title="pyqt 教程文章纪录">
+                pyqt 教程文章纪录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/avatar.jpg" alt="暗语者">
+            
+              <p class="site-author-name" itemprop="name">暗语者</p>
+              <p class="site-description motion-element" itemprop="description">没有最好的语言, 只有最适合你开发场景的语言</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://macshuo.com/" title="MacTalk" target="_blank">MacTalk</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hoxis.github.io/" title="hoxis博客" target="_blank">hoxis博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.xetlab.com/" title="零壹视界博客" target="_blank">零壹视界博客</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">暗语者</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+<div class="BbeiAn-info">
+  浙ICP备 -
+  <a href="http://www.miitbeian.gov.cn/">16032001号-2</a>
+  
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '5qSwEnImXn1su5p5DumBOPtA-gzGzoHsz',
+        appKey: 'JTBE8p9njyf5BXH4ltJ675rR',
+        placeholder: 'ヾﾉ≥∀≤)o来啊, 快活啊!',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script>
+  ((window.gitter = {}).chat = {}).options = {
+    //room替换成自己的聊天室名称即可，room的名称规则是：username/roomname
+    room: 'anyuzhe/community'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+</body>
+</html>

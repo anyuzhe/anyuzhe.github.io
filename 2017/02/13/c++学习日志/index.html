@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="C++,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="C和C++,是很多程序员必修之课C作为编写操作系统的语言 速度是高级语言里最快的C能直接操作内存,学习的途中可以加深对计算机运行时候,内存管理的理解C++可以更快速的编写C的工作的代码,是写了很多软件的语言 基础命名空间 命名空间可以防止,两个类的成员和方法命名冲突 可以使用using关键字,来引入命名空间 例如：using namespace std;  别名 可以在函数的形参中在变量前加 &amp;a">
+<meta name="keywords" content="C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ 学习日志">
+<meta property="og:url" content="https://anyuzhe.github.io/2017/02/13/c++学习日志/index.html">
+<meta property="og:site_name" content="暗语者的博客">
+<meta property="og:description" content="C和C++,是很多程序员必修之课C作为编写操作系统的语言 速度是高级语言里最快的C能直接操作内存,学习的途中可以加深对计算机运行时候,内存管理的理解C++可以更快速的编写C的工作的代码,是写了很多软件的语言 基础命名空间 命名空间可以防止,两个类的成员和方法命名冲突 可以使用using关键字,来引入命名空间 例如：using namespace std;  别名 可以在函数的形参中在变量前加 &amp;a">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://images.cnblogs.com/cnblogs_com/skynet/WindowsLiveWriter/C_D0B5/image_thumb_3.png">
+<meta property="og:updated_time" content="2021-11-19T03:41:15.351Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C++ 学习日志">
+<meta name="twitter:description" content="C和C++,是很多程序员必修之课C作为编写操作系统的语言 速度是高级语言里最快的C能直接操作内存,学习的途中可以加深对计算机运行时候,内存管理的理解C++可以更快速的编写C的工作的代码,是写了很多软件的语言 基础命名空间 命名空间可以防止,两个类的成员和方法命名冲突 可以使用using关键字,来引入命名空间 例如：using namespace std;  别名 可以在函数的形参中在变量前加 &amp;a">
+<meta name="twitter:image" content="http://images.cnblogs.com/cnblogs_com/skynet/WindowsLiveWriter/C_D0B5/image_thumb_3.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://anyuzhe.github.io/2017/02/13/c++学习日志/">
+
+
+
+
+
+  <title>C++ 学习日志 | 暗语者的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    
+    <a href="https://github.com/anyuzhe" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">暗语者的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://anyuzhe.github.io/2017/02/13/c++学习日志/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="暗语者">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="暗语者的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">C++ 学习日志</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-13T23:26:46+08:00">
+                2017-02-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/c/" itemprop="url" rel="index">
+                    <span itemprop="name">c++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/13/c++学习日志/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/02/13/c++学习日志/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>C和C++,是很多程序员必修之课<br>C作为编写操作系统的语言 速度是高级语言里最快的<br>C能直接操作内存,学习的途中可以加深对计算机运行时候,内存管理的理解<br>C++可以更快速的编写C的工作的代码,是写了很多软件的语言</p>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a><strong>基础</strong></h2><h4 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a><strong>命名空间</strong></h4><blockquote>
+<p>命名空间可以防止,两个类的成员和方法命名冲突 可以使用using关键字,来引入命名空间 例如：using namespace std;</p>
+</blockquote>
+<h4 id="别名"><a href="#别名" class="headerlink" title="别名"></a><strong>别名</strong></h4><blockquote>
+<p>可以在函数的形参中在变量前加 &amp; ,使得实参的传入变成实参取别名的方式传入,可以直接对原来的数据就行修改,对比同样方式的指针操作 更直观</p>
+</blockquote>
+<h4 id="定义常量的方式const"><a href="#定义常量的方式const" class="headerlink" title="定义常量的方式const"></a><strong>定义常量的方式const</strong></h4><blockquote>
+<p>可以在函数的形参中在变量前加const 关键字,使得传入的形参变成常量,无法进行修改.也可以在指针前加关键字,使得指针无法修改为别的地址</p>
+</blockquote>
+<h4 id="函数重载"><a href="#函数重载" class="headerlink" title="函数重载"></a><strong>函数重载</strong></h4><blockquote>
+<p>函数重载是指在同一作用域内，可以有一组具有相同函数名，不同参数列表的函数，这组函数被称为重载函数。重载函数通常用来命名一组功能相似的函数，这样做减少了函数名的数量，避免了名字空间的污染，对于程序的可读性有很大的好处。<br>可以定义多个同名函数,函数参数,类型和默认值的不同进行重载<br><img src="http://images.cnblogs.com/cnblogs_com/skynet/WindowsLiveWriter/C_D0B5/image_thumb_3.png" alt></p>
+</blockquote>
+<h4 id="普通函数和内联函数"><a href="#普通函数和内联函数" class="headerlink" title="普通函数和内联函数"></a><strong>普通函数和内联函数</strong></h4><blockquote>
+<p>普通函数运行时的数据在栈里,而内联函数直接编译在代码段里  在函数前面加上关键字inline定义  但是只能定义简单逻辑的函数</p>
+</blockquote>
+<h4 id="内存的申请和删除"><a href="#内存的申请和删除" class="headerlink" title="内存的申请和删除"></a><strong>内存的申请和删除</strong></h4><blockquote>
+<p>使用关键字 new delete 运算符 操作 操作的内存数据在堆中,申请的内存需要手动释放,不然会造成内存泄漏 列如:int *p = new int; delete p;</p>
+</blockquote>
+<h2 id="对象-三大特性-封装–继承–多态"><a href="#对象-三大特性-封装–继承–多态" class="headerlink" title="对象  三大特性 封装–继承–多态"></a><em>对象</em>  三大特性 封装–继承–多态</h2><h3 id="–封装–特性"><a href="#–封装–特性" class="headerlink" title="–封装–特性"></a><strong>–封装–特性</strong></h3><h5 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a><strong>构造函数</strong></h5><blockquote>
+<p>与类同名的函数 在创建对象时候自动调用</p>
+</blockquote>
+<h5 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a><strong>析构函数</strong></h5><blockquote>
+<p>在类名前面加上~符号的函数 在销毁对象的时候自动调用</p>
+</blockquote>
+<h5 id="拷贝构造函数"><a href="#拷贝构造函数" class="headerlink" title="拷贝构造函数"></a><strong>拷贝构造函数</strong></h5><blockquote>
+<p>与构造函数的函数名相同,形参不同 列如 CExample(const CExample&amp; C)  拷贝构造函数是一种特殊的构造函数，函数的名称必须和类名称一致，它必须的一个参数是本类型的一个引用变量</p>
+</blockquote>
+<blockquote>
+<p>在C++中，下面三种对象需要调用拷贝构造函数！</p>
+</blockquote>
+<blockquote>
+<ol>
+<li>对象以值传递的方式传入函数参数</li>
+<li>对象以值传递的方式从函数返回</li>
+<li>对象需要通过另外一个对象进行初始化；</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>浅拷贝就是拷贝构造函数没有处理静态数据成员,只对对象中的数据成员进行简单的赋值<br>深拷贝是把静态数据成员,创建新的数据对象在新的对象中传入</p>
+</blockquote>
+<blockquote>
+<p>通过对对象复制的分析，我们发现对象的复制大多在进行“值传递”时发生，这里有一个小技巧可以防止按值传递——声明一个私有拷贝构造函数。甚至不必去定义这个拷贝构造函数，这样因为拷贝构造函数是私有的，如果用户试图按值传递或函数返回该类对象，将得到一个编译错误，从而可以避免按值传递或返回对象。</p>
+</blockquote>
+<h5 id="初始化列表"><a href="#初始化列表" class="headerlink" title="初始化列表"></a><strong>初始化列表</strong></h5><p>Test2(Test1 &amp;t1):test1(t1){}<br>构造函数的执行可以分成两个阶段，初始化阶段和计算阶段，初始化阶段先于计算阶段。</p>
+<blockquote>
+<p>以下几种情况时必须使用初始化列表</p>
+<ol>
+<li>常量成员，因为常量只能初始化不能赋值，所以必须放在初始化列表里面</li>
+<li>引用类型，引用必须在定义的时候初始化，并且不能重新赋值，所以也要写在初始化列表里面</li>
+<li>没有默认构造函数的类类型，因为使用初始化列表可以不必调用默认构造函数来初始化，而是直接调用拷贝构造函数初始化。</li>
+</ol>
+</blockquote>
+<h3 id="–继承–特性"><a href="#–继承–特性" class="headerlink" title="–继承–特性"></a><strong>–继承–特性</strong></h3><blockquote>
+<p>三种类型: 公有继承 public 保护继承 protected 私有继承 private<br>继承的数据相同,成员访问限定符可以降级 public继承不变 protected使得public变成protected private继承使得所有成员变为private  父类的private成员不会被继承</p>
+</blockquote>
+<h3 id="隐藏"><a href="#隐藏" class="headerlink" title="隐藏"></a><strong>隐藏</strong></h3><blockquote>
+<p>在子类中定义与父类的同名方法 可以使得父类的方法隐藏 然后可以用parent::function命 的形式调用</p>
+</blockquote>
+<h3 id="多继承与多重继承"><a href="#多继承与多重继承" class="headerlink" title="多继承与多重继承"></a><strong>多继承与多重继承</strong></h3><blockquote>
+<p>子类同时可以继承多个父类(多继承),也可以进行多级的继承(多重继承)</p>
+</blockquote>
+<h3 id="虚继承"><a href="#虚继承" class="headerlink" title="虚继承"></a><strong>虚继承</strong></h3><blockquote>
+<p>为了解决从不同途径继承来的同名的数据成员在内存中有不同的拷贝造成数据不一致问题，将共同基类设置为虚基类。这时从不同的路径继承过来的同名数据成员在内存中就只有一个拷贝，同一个函数名也只有一个映射。这样不仅就解决了二义性问题，也节省了内存，避免了数据不一致的问题。<br>class 派生类名：virtual 继承方式  基类名<br>virtual是关键字，声明该基类为派生类的虚基类。<br>在多继承情况下，虚基类关键字的作用范围和继承方式关键字相同，只对紧跟其后的基类起作用。<br>声明了虚基类之后，虚基类在进一步派生过程中始终和派生类一起，维护同一个基类子对象的拷贝。</p>
+</blockquote>
+<h3 id="–多态–特性"><a href="#–多态–特性" class="headerlink" title="–多态–特性"></a><strong>–多态–特性</strong></h3><h3 id="虚函数"><a href="#虚函数" class="headerlink" title="虚函数"></a><strong>虚函数</strong></h3><p>子类继承使用虚函数进行函数的覆盖</p>
+<blockquote>
+<p>态类型：具有继承关系的多个类型<br>知识点1：虚函数(virtual  函数名();)——解决“如果你以一个基类指针指向一个派生类对象，那么通过该指针，你只能访问基础类定义的成员函数”此问题。<br>原因：如果你以一个基类指针指向一个派生类对象，那么通过该指针，你只能访问基础类定义的成员函数；如果以派生类指针指向基类对象，这种做法相当危险，一般不会这么定义<br>知识点2：同名成员函数——如果基类和派生类定义了相同的成员函数，那么对象指针调用成员函数时，到底调用的是哪个成员函数，最终取决于这个指针的原型，而不是指向的对象类型，不过虚函数可以解决此问题，可以在“一个基类指针指向一个派生类对象”的情况下，调用派生类对象的同名成员函数<br>知识点3：虚析构函数(virtual ~类名();)——解决在动态多态中，内存泄漏的问题<br>知识点4：virtual限制用法——不能修饰类外申明并定义的函数（全局函数），即只能修饰类内申明并定义的函数（通常在申明时修饰即可）；virtual不能修饰类内的静态成员函数；virtual不能修饰内联函数；virtual不能修饰构造函数。<br>知识点5：继承虚函数——注意上述，虚函数和虚析构函数，一定要在基类里给函数或者析构函数添加virtual关键字。若基类里，申明虚函数，则派生类里会默认继承虚函数，当然最好也给其他类加上virtual关键字<br>注：在C++11新标准中，可以使用override关键字来说明派生类中的虚函数。<br>知识点6：析构函数最好都添加virtual关键字，使之成为虚析构函数，这样避免之后出现的内存泄漏问题（即内存占用不释放），因为并不知道未来继承的子类会不会在其构造函数中申请内存<br>知识点7：虚函数原理<br>指针指向对象——对象指针；指针指向函数——函数指针<br>申明基类的虚函数时，会自动生成虚函数表，用于寻找虚函数的入口地址，如果派生类继承基类的虚函数，且没有自定义同名虚函数时，则也会自动生成虚函数表，而自动生成的虚函数表指针，会指向基类虚函数的相同入口地址；但如果派生类继承基类，并自定义同名虚函数时，则会自动生成虚函数，但指向与上述不同的虚函数入口地址（函数的覆盖）。<br>知识点8：函数的覆盖和隐藏<br>当基类和子类出现同名函数时，此时出现函数的隐藏；但若定义了虚同名函数，则此时出现函数的覆盖。（可参考知识点7，即虚函数表的地址异同问题）<br>知识点9：虚析构函数原理<br>理论前提：执行完派生类的析构函数就会执行基类的析构函数<br>当在基类中，申明虚析构函数后，则在派生类中，也会在默认生成虚析构函数，即在派生类的析构函数前，默认加上virtual关键字<br>这样可以解决内存泄漏问题，即解决了“释放了指向基类对象的指针所占内存，但忘了释放派生类里分配给另一指针的内存（假如另一指针存在的话）”，因为派生类的虚函数指针表的作用（请参考知识点7)，结果就是先执行派生类的析构函数，再执行基类的析构函数，从而无内存占用，解决内存泄漏问题。<br>知识点10：对象大小（sizeof(对象名)）<br>这表明对象中的数据成员占用的内存大小，并不包含成员函数；若对象中，无数据成员，则默认分配其一个字节内存大小（若包含虚函数或虚析构函数，则生成虚函数表，此时占用4个字节的内存，即虚函数表指针的大小）。<br>注：一个指针所占用4个字节的内存<br>知识点11：虚函数表<br>a.当类中定义了虚函数或者虚析构函数时，则在类实例化对象时，自动生成虚函数表，并在对象中生成一个虚函数表指针<br>b.在多态的情况下，虚函数表指针在对象中所占据的内存位置是对象前4个寄存内存单元，后面排列的是其它数据成员<br>c.每个类只有一份虚函数表，所有该类的对象共用同一张虚函数表</p>
+</blockquote>
+<h4 id="运行时类型识别"><a href="#运行时类型识别" class="headerlink" title="运行时类型识别"></a><strong>运行时类型识别</strong></h4><blockquote>
+<p>通过RTTI，能够通过基类的指针或引用来检索其所指对象的实际类型。c++通过下面两个操作符提供RTTI。<br>（1）typeid：返回指针或引用所指对象的实际类型。<br>（2）dynamic_cast：将基类类型的指针或引用安全的转换为派生类型的指针或引用。<br>对于带虚函数的类，在运行时执行RTTI操作符，返回动态类型信息；对于其他类型，在编译时执行RTTI，返回静态类型信息。</p>
+</blockquote>
+<h4 id="纯虚函数"><a href="#纯虚函数" class="headerlink" title="纯虚函数"></a><strong>纯虚函数</strong></h4><blockquote>
+<p>virtual 函数类型 函数名（）=0；//纯虚函数<br>只有函数申明，没有函数定义的函数也是纯虚函数。</p>
+</blockquote>
+<h4 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a><strong>抽象类</strong></h4><blockquote>
+<p>定义：含有纯虚函数的类叫做抽象类<br>抽象类无法实例化对象；抽象类的子类也可以是抽象类，但子类若将抽象类的所有函数都做了实现，即内部有程序，则子类可以实例化对象。<br>如果一个类含有纯虚函数（抽象类），则无法实例化；但子类可以实例化对象</p>
+</blockquote>
+<h4 id="接口类"><a href="#接口类" class="headerlink" title="接口类"></a><strong>接口类</strong></h4><blockquote>
+<p>定义：仅含有纯虚函数的类（即无任何数据成员，仅含纯虚函数）<br>用法：定义一个基类，作为接口类，用接口类指针指向其派生类的对象，借此可以调用派生类的同名虚函数（在接口类中是纯虚函数，在派生类中是虚函数），提现接口的作用。<br>扩展：接口类也是抽象类；不能用接口类实例化对象（即接口类可以被继承，但不可实例化对象）；一个类既可以继承一个或多个接口类，也可以同时继承非接口类；可以使用接口类指针指向其子类对象，并调用子类对象中实现的接口类纯虚函数。</p>
+</blockquote>
+<h4 id="static静态成员"><a href="#static静态成员" class="headerlink" title="static静态成员"></a><strong>static静态成员</strong></h4><blockquote>
+<p>保存在类中的数据只有一份,在对象中通用,与全局变量类似</p>
+</blockquote>
+<h4 id="友元函数"><a href="#友元函数" class="headerlink" title="友元函数"></a><strong>友元函数</strong></h4><blockquote>
+<p>可以在类中定义全局友元函数 和类友元函数    定义之后 可以在函数中调用类的所有成员</p>
+</blockquote>
+<h4 id="运算符重载"><a href="#运算符重载" class="headerlink" title="运算符重载"></a><strong>运算符重载</strong></h4><blockquote>
+<p>可以在类中定义运算符重载函数 来支持运算符可以进行类的运算  包括一元运算符和二元运算符</p>
+</blockquote>
+<h4 id="模板函数和模板类"><a href="#模板函数和模板类" class="headerlink" title="模板函数和模板类"></a><strong>模板函数和模板类</strong></h4><blockquote>
+<p>对于运算过程不变类型变换的函数和类  可以分别使用模板函数和模板类</p>
+</blockquote>
+<h4 id="C-标准模板类STL"><a href="#C-标准模板类STL" class="headerlink" title="C++标准模板类STL"></a><strong>C++标准模板类STL</strong></h4><blockquote>
+<p>是C++中编译器实现的内置容器类<br>vector向量 list链表 map映射等<br>可以配合迭代器使用</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag"># C++</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/13/使用gitFlow/" rel="next" title="Git 在团队中的最佳实践--如何正确使用Git Flow">
+                <i class="fa fa-chevron-left"></i> Git 在团队中的最佳实践--如何正确使用Git Flow
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/14/centos编译安装php/" rel="prev" title="centos 编译安装php">
+                centos 编译安装php <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/avatar.jpg" alt="暗语者">
+            
+              <p class="site-author-name" itemprop="name">暗语者</p>
+              <p class="site-description motion-element" itemprop="description">没有最好的语言, 只有最适合你开发场景的语言</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://macshuo.com/" title="MacTalk" target="_blank">MacTalk</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hoxis.github.io/" title="hoxis博客" target="_blank">hoxis博客</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.xetlab.com/" title="零壹视界博客" target="_blank">零壹视界博客</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础"><span class="nav-number">1.</span> <span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#命名空间"><span class="nav-number">1.0.1.</span> <span class="nav-text">命名空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#别名"><span class="nav-number">1.0.2.</span> <span class="nav-text">别名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定义常量的方式const"><span class="nav-number">1.0.3.</span> <span class="nav-text">定义常量的方式const</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数重载"><span class="nav-number">1.0.4.</span> <span class="nav-text">函数重载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#普通函数和内联函数"><span class="nav-number">1.0.5.</span> <span class="nav-text">普通函数和内联函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内存的申请和删除"><span class="nav-number">1.0.6.</span> <span class="nav-text">内存的申请和删除</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#对象-三大特性-封装–继承–多态"><span class="nav-number">2.</span> <span class="nav-text">对象  三大特性 封装–继承–多态</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#–封装–特性"><span class="nav-number">2.1.</span> <span class="nav-text">–封装–特性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#构造函数"><span class="nav-number">2.1.0.1.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#析构函数"><span class="nav-number">2.1.0.2.</span> <span class="nav-text">析构函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#拷贝构造函数"><span class="nav-number">2.1.0.3.</span> <span class="nav-text">拷贝构造函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#初始化列表"><span class="nav-number">2.1.0.4.</span> <span class="nav-text">初始化列表</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#–继承–特性"><span class="nav-number">2.2.</span> <span class="nav-text">–继承–特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#隐藏"><span class="nav-number">2.3.</span> <span class="nav-text">隐藏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多继承与多重继承"><span class="nav-number">2.4.</span> <span class="nav-text">多继承与多重继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚继承"><span class="nav-number">2.5.</span> <span class="nav-text">虚继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#–多态–特性"><span class="nav-number">2.6.</span> <span class="nav-text">–多态–特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚函数"><span class="nav-number">2.7.</span> <span class="nav-text">虚函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#运行时类型识别"><span class="nav-number">2.7.1.</span> <span class="nav-text">运行时类型识别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#纯虚函数"><span class="nav-number">2.7.2.</span> <span class="nav-text">纯虚函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#抽象类"><span class="nav-number">2.7.3.</span> <span class="nav-text">抽象类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接口类"><span class="nav-number">2.7.4.</span> <span class="nav-text">接口类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#static静态成员"><span class="nav-number">2.7.5.</span> <span class="nav-text">static静态成员</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#友元函数"><span class="nav-number">2.7.6.</span> <span class="nav-text">友元函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运算符重载"><span class="nav-number">2.7.7.</span> <span class="nav-text">运算符重载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模板函数和模板类"><span class="nav-number">2.7.8.</span> <span class="nav-text">模板函数和模板类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-标准模板类STL"><span class="nav-number">2.7.9.</span> <span class="nav-text">C++标准模板类STL</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">暗语者</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+<div class="BbeiAn-info">
+  浙ICP备 -
+  <a href="http://www.miitbeian.gov.cn/">16032001号-2</a>
+  
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '5qSwEnImXn1su5p5DumBOPtA-gzGzoHsz',
+        appKey: 'JTBE8p9njyf5BXH4ltJ675rR',
+        placeholder: 'ヾﾉ≥∀≤)o来啊, 快活啊!',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script>
+  ((window.gitter = {}).chat = {}).options = {
+    //room替换成自己的聊天室名称即可，room的名称规则是：username/roomname
+    room: 'anyuzhe/community'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+</body>
+</html>
